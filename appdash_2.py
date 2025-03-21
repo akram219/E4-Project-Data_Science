@@ -45,17 +45,12 @@ app.layout = html.Div(children=[
     dbc.Row([
         dbc.Col([
             dcc.Graph(id='graph')
-        ], width=8),
-
-        dbc.Col([
-            html.Div(id='stats', style={'padding': '10px', 'font-size': '18px'}),
-        ], width=4),
+        ], width=12),
     ], style={'padding': '20px'}),
 ])
 # Callback pour mettre à jour le graphique en fonction des dates sélectionnées
 @app.callback(
-    [Output('graph', 'figure'),
-     Output('stats', 'children')],
+    Output('graph', 'figure'),
     [Input('start-date-picker', 'date'),
      Input('end-date-picker', 'date')]
 )
@@ -70,7 +65,7 @@ def update_graph_and_stats(start_date, end_date):
     # Créer la figure avec Plotly
     fig = px.line(filtered_df, x="date", y="value", title="Évolution des valeurs")
 
-    return fig, stats
+    return fig
 # Callback pour réinitialiser les dates
 @app.callback(
     [Output('start-date-picker', 'date'),
