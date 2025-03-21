@@ -67,10 +67,6 @@ def update_graph_and_stats(start_date, end_date):
 
     # Filtrer les données selon les dates sélectionnées
     filtered_df = df[(df['date'] >= start_date) & (df['date'] <= end_date)]
-    # Calcul des statistiques
-    mean_value = filtered_df['value'].mean()
-    median_value = filtered_df['value'].median()
-    stats = f"Moyenne: {mean_value:.2f}, Médiane: {median_value:.2f}"
     # Créer la figure avec Plotly
     fig = px.line(filtered_df, x="date", y="value", title="Évolution des valeurs")
 
