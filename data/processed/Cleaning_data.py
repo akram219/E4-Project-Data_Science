@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 
 
 def load_and_clean_rte_data(file_pattern):
-    # 1. Chargement des fichiers
     files = glob.glob(file_pattern)
     if not files:
         raise ValueError(f"Aucun fichier trouvé avec le pattern {file_pattern}")
