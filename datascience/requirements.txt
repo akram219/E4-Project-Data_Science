@@ -1,9 +1,0 @@
-flask
-pandas
-openpyxl
-xlrd
-scikit-learn
-statsmodels
-dash
-dash-bootstrap-components
-flask-caching
